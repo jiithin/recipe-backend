@@ -1,0 +1,64 @@
+const mongoose=require('mongoose')
+
+const reciepeSchema= new mongoose.Schema({
+    id:{
+        type:Number,
+        required:true
+    },
+    name:{
+        type:String,
+        required:true
+    },
+    ingredients:{
+        type:[String],
+        required:true
+    },
+    instructions:{
+        type:[String],
+        required:true
+    },
+    prepTimeMinutes:{
+        type:Number,
+        required:true
+    },
+    cookTimeMinutes:{
+        type:Number,
+    },
+    servings:{
+        type:Number,
+    },
+    difficulty:{
+        type:String,
+        required:true
+    },
+    cuisine:{
+        type:String,
+        required:true
+    },
+    caloriesPerServing:{
+        type:Number,
+    },
+    tags:{
+        type:[String],
+    },
+    userId:{
+        type:Number,
+    },
+    image:{
+        type:String,
+        required:true
+    },
+    rating:{
+        type:Number,
+    },
+    reviewCount:{
+        type:Number,
+    },
+    mealType:{
+        type:[String],
+        required:true
+    }
+})
+
+const recipes=mongoose.model('recipes',reciepeSchema)
+module.exports=recipes
